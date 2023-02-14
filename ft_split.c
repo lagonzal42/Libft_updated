@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagonzal <lagonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lagonzal <larraingonzalez@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 13:47:08 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/12/22 14:10:16 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:38:14 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	ft_wordcount(const char *s, char c)
 	return (w);
 }
 
-char	**ft_double_free(char **s, int m)
+char	**ft_double_free(char **s)
 {
 	int	n;
 
 	n = -1;
-	while (++n <= m)
+	while (s[++n])
 		free(s[n]);
 	return (free(s), NULL);
 }
@@ -85,11 +85,11 @@ char	**ft_split(const char *s, char c)
 		while (s[n] && s[n] == c)
 			n++;
 		len = 0;
-		while (s[n] != c && s[n] != '\0' && n++ >= 0)
+		while (s[n] != c && s[n++] != '\0')
 			len++;
 		ptr[m] = malloc((len + 1) * sizeof(*ptr[m]));
 		if (!ptr[m])
-			return (ft_double_free(ptr, m));
+			return (ft_double_free(ptr));
 	}
 	ptr[m] = NULL;
 	return (ft_copy(&ptr, s, c));
