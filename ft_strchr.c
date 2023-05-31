@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lagonzal <larraingonzalez@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:59:20 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/09/05 14:21:10 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/05/31 13:59:36 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	n;
 
+	if (!s)
+		return (NULL);
 	n = 0;
 	while (s[n] != (char)c && s[n] != '\0')
 		n++;
