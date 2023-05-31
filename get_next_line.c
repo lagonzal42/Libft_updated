@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*ft_depurate(char *save, int pos_lb);
 static char	*ft_read_file(int fd, char *save);

@@ -49,7 +49,8 @@ SRCS = ft_atoi.c\
 	   ft_strtrim.c \
 	   ft_substr.c \
 	   ft_tolower.c \
-	   ft_toupper.c
+	   ft_toupper.c \
+	   get_next_line.c \
 
 OBJS = ft_atoi.o \
 	   ft_bzero.o \
@@ -99,7 +100,8 @@ OBJS = ft_atoi.o \
 	   ft_strtrim.o \
 	   ft_substr.o \
 	   ft_tolower.o \
-	   ft_toupper.o
+	   ft_toupper.o \
+	   get_next_line.o
 
 CC = gcc
 

@@ -6,12 +6,16 @@
 /*   By: lagonzal <larraingonzalez@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:18:40 by lagonzal          #+#    #+#             */
-/*   Updated: 2023/02/14 19:38:54 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:34:44 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 # include <stddef.h>
 # include <stdlib.h>
@@ -73,5 +77,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strmapi(const char *s, char (*f) (unsigned int, char));
+char	*get_next_line(int fd)
 
 #endif
