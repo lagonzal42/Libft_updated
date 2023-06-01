@@ -6,11 +6,11 @@
 /*   By: lagonzal <larraingonzalez@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 13:50:20 by lagonzal          #+#    #+#             */
-/*   Updated: 2023/05/31 13:50:20 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/06/01 15:39:56 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 #include <fcntl.h>
 
 static char	*ft_depurate(char *save, int pos_lb);
