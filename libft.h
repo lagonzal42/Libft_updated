@@ -6,7 +6,7 @@
 /*   By: larra <larra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:18:40 by lagonzal          #+#    #+#             */
-/*   Updated: 2023/08/08 18:48:42 by larra            ###   ########.fr       */
+/*   Updated: 2023/08/08 20:44:20 by larra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_list
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_double_print(char **ptr);
 char	**ft_double_free(char **s);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -60,6 +61,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putptr_n(unsigned long long nbr, const char *base, int *n);
 int		ft_putstr_fd(char *s, int fd);
 int		ft_printf(const char *s, ...);
+char	**ft_resize(char **old, char *new_line);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
