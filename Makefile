@@ -4,6 +4,7 @@ NAME = libft.a
 SRCS = ft_atoi.c\
 	   ft_bzero.c \
 	   ft_calloc.c \
+	   ft_double_print.c\
 	   ft_isalnum.c \
 	   ft_isalpha.c \
 	   ft_isascii.c \
@@ -34,6 +35,7 @@ SRCS = ft_atoi.c\
 	   ft_putnbr_n.c\
 	   ft_putstr_n.c\
 	   ft_putptr_n.c\
+	   ft_resize.c\
 	   ft_split.c \
 	   ft_strchr.c \
 	   ft_strdup.c \
@@ -55,6 +57,7 @@ SRCS = ft_atoi.c\
 OBJS = ft_atoi.o \
 	   ft_bzero.o \
 	   ft_calloc.o \
+	   ft_double_print.o\
 	   ft_isalnum.o \
 	   ft_isalpha.o \
 	   ft_isascii.o \
@@ -83,8 +86,8 @@ OBJS = ft_atoi.o \
 	   ft_putchar.o \
 	   ft_putchar_n.o\
 	   ft_putnbr_n.o\
-	   ft_putstr_n.o\
 	   ft_putptr_n.o\
+	   ft_resize.o\
 	   ft_split.o \
 	   ft_strchr.o \
 	   ft_strdup.o \
