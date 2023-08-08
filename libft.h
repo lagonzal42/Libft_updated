@@ -6,7 +6,7 @@
 /*   By: larra <larra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:18:40 by lagonzal          #+#    #+#             */
-/*   Updated: 2023/08/08 18:35:06 by larra            ###   ########.fr       */
+/*   Updated: 2023/08/08 18:48:42 by larra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_n(long long int nbr, const char *base, int *n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putptr_n(unsigned long long nbr, const char *base, int *n);
-void	ft_putstr_fd(char *s, int fd);
-int		ft_putstr_n(char *s);
+int		ft_putstr_fd(char *s, int fd);
 int		ft_printf(const char *s, ...);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);

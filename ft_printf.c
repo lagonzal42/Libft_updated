@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagonzal <lagonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: larra <larra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:05:36 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/12/22 14:09:01 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/08/08 18:52:11 by larra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_select(char slctr, va_list arg_ptr)
 	if (slctr == 'c')
 		n = ft_putchar_n(va_arg(arg_ptr, int));
 	else if (slctr == 's')
-		n = ft_putstr_n(va_arg(arg_ptr, char *));
+		n = ft_putstr_fd(va_arg(arg_ptr, char *), 1);
 	else if (slctr == 'p')
 		ft_putnbr_n(va_arg(arg_ptr, unsigned long long), g_hex, &n);
 	else if (slctr == 'd' || slctr == 'i')
@@ -39,7 +39,7 @@ int	ft_select(char slctr, va_list arg_ptr)
 	else if (slctr == 'X')
 		ft_putnbr_n((unsigned) va_arg(arg_ptr, int), g_hexup, &n);
 	else if (slctr == '%')
-		n += write(1, "%", 1);
+		n += write(1, &slctr, 1);
 	return (n);
 }
 
@@ -47,19 +47,21 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	arg_ptr;
 	int		n;
+	int		m;
 
 	n = -1;
+	m = 0;
 	va_start(arg_ptr, s);
 	while (s[++n])
 	{
 		if (s[n] == '%')
 		{
 			n++;
-			n += ft_select(s[n], arg_ptr) - 1;
+			m += ft_select(s[n], arg_ptr) - 1;
 		}
 		else
 			ft_putchar(s[n]);
 	}
 	va_end(arg_ptr);
-	return (n);
+	return (n + m);
 }
