@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagonzal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lagonzal <lagonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:00:16 by lagonzal          #+#    #+#             */
-/*   Updated: 2022/09/21 16:53:03 by lagonzal         ###   ########.fr       */
+/*   Updated: 2023/08/18 11:33:46 by lagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ char	*ft_strtrim(const char *s1, const char *set)
 		ptr[m++] = s1[n++];
 	ptr[m] = '\0';
 	return (ptr);
+}
+char **ft_multitrim(char **to_trim, char *set)
+{
+	int	n;
+	char *holder;
+
+	n = -1;
+	while (to_trim[++n])
+	{
+		holder = ft_strtrim(to_trim[n], set);
+		free(to_trim[n]);
+		to_trim[n] = holder;
+	}
+	return (to_trim);
 }
 
 /*int	main(void)
